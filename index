@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iron &amp; Comb Barber Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C1A18;
+    --cream:#F3EDE4;
+    --red:#A13D2B;
+    --brass:#8C7A4E;
+    --line: rgba(28,26,24,0.16);
+    --slab: 'Roboto Slab', Georgia, serif;
+    --sans: 'Work Sans', -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+  a{ color: inherit; }
+  .wrap{ max-width: 1080px; margin:0 auto; padding: 0 24px; }
+
+  .stripes{
+    height: 6px;
+    background: repeating-linear-gradient(135deg, var(--red) 0 14px, var(--cream) 14px 28px, var(--ink) 28px 42px);
+  }
+
+  /* ---------- Nav ---------- */
+  .nav{ background: var(--ink); }
+  .nav .wrap{
+    display:flex; align-items:center; justify-content:space-between; height: 76px;
+  }
+  .brand{
+    font-family: var(--slab); font-weight:700; font-size: 1.3rem;
+    color: var(--cream); letter-spacing: 0.02em;
+  }
+  .nav-links{ display:flex; gap: 30px; list-style:none; }
+  .nav-links a{
+    color: var(--cream); text-decoration:none; font-size: 0.92rem;
+    border-bottom: 1px solid transparent;
+  }
+  .nav-links a:hover{ border-color: var(--red); }
+  .nav-cta{
+    background: var(--red); color: var(--cream);
+    padding: 10px 20px; text-decoration:none; font-weight:600; font-size: 0.9rem;
+  }
+  @media (max-width: 720px){ .nav-links{ display:none; } }
+
+  /* ---------- Hero: centered, ticket-board feel ---------- */
+  .hero{
+    padding: 80px 0 60px;
+    text-align:center;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .kicker{
+    font-family: var(--sans); font-weight:600; letter-spacing:0.08em;
+    font-size: 0.8rem; color: var(--red); margin-bottom: 18px;
+  }
+  .hero h1{
+    font-family: var(--slab); font-weight:700;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    line-height:1.05;
+    max-width: 14ch; margin: 0 auto;
+  }
+  .hero p{
+    margin: 22px auto 0; max-width: 46ch;
+    font-size: 1.08rem; color: rgba(28,26,24,0.75);
+  }
+  .hero-ctas{ margin-top: 32px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn-primary{
+    background: var(--ink); color: var(--cream);
+    padding: 14px 28px; text-decoration:none; font-weight:700; font-size:0.92rem;
+  }
+  .btn-secondary{
+    padding: 14px 28px; text-decoration:none; font-weight:700; font-size:0.92rem;
+    border: 2px solid var(--ink); color: var(--ink);
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ padding: 84px 0; }
+  .section-head{ text-align:center; margin-bottom: 44px; }
+  .section-head .kicker{
+    font-weight:600; letter-spacing:0.08em; font-size: 0.8rem; color: var(--red); margin-bottom: 10px;
+  }
+  h2{
+    font-family: var(--slab); font-weight:700;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+  }
+
+  /* ---------- Menu board pricing ---------- */
+  .menu-board{
+    background: var(--ink); color: var(--cream);
+  }
+  .menu-board h2{ color: var(--cream); }
+  .menu-board .section-head .kicker{ color: var(--brass); }
+  .menu-list{ max-width: 640px; margin: 0 auto; }
+  .menu-row{
+    display:flex; align-items:baseline; gap: 12px;
+    padding: 18px 0;
+    border-bottom: 1px dashed rgba(243,237,228,0.25);
+  }
+  .menu-row .name{ font-family: var(--slab); font-size: 1.15rem; white-space:nowrap; }
+  .menu-row .dots{ flex:1; border-bottom: 1px dotted rgba(243,237,228,0.35); transform: translateY(-4px); }
+  .menu-row .price{ font-family: var(--slab); font-size: 1.15rem; color: var(--brass); white-space:nowrap; }
+  .menu-row .sub{ display:block; font-size: 0.85rem; color: rgba(243,237,228,0.55); margin-top:2px; }
+
+  /* ---------- Chairs / barbers ---------- */
+  .chairs{ display:grid; grid-template-columns: repeat(3,1fr); gap: 0; border-top:1px solid var(--line); }
+  .chair{ padding: 32px 24px; text-align:center; border-right: 1px solid var(--line); }
+  .chair:last-child{ border-right:none; }
+  .chair .initial{
+    width:64px; height:64px; border-radius:50%;
+    background: var(--red); color: var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--slab); font-size: 1.4rem; margin: 0 auto 16px;
+  }
+  .chair h3{ font-family: var(--slab); font-size: 1.15rem; }
+  .chair p{ font-size: 0.9rem; color: rgba(28,26,24,0.65); margin-top:6px; }
+  @media (max-width: 720px){
+    .chairs{ grid-template-columns: 1fr; }
+    .chair{ border-right:none; border-bottom: 1px solid var(--line); }
+  }
+
+  /* ---------- Hours / info strip ---------- */
+  .info{ background: var(--brass); color: var(--ink); }
+  .info .wrap{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap: 24px;
+    padding: 36px 24px; text-align:left;
+  }
+  .info-block b{ display:block; font-family: var(--slab); font-size:1rem; margin-bottom:4px; }
+  .info-block span{ font-size: 0.9rem; }
+
+  /* ---------- Booking ---------- */
+  .booking .wrap{ max-width: 620px; }
+  form{ display:grid; gap: 16px; margin-top: 28px; }
+  .form-row{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  label{ display:block; font-size: 0.82rem; font-weight:600; margin-bottom: 6px; }
+  input, select, textarea{
+    width:100%; padding: 12px 14px; font-family: var(--sans); font-size: 0.95rem;
+    border: 1px solid var(--line); background: var(--cream);
+  }
+  input:focus, select:focus, textarea:focus{ outline: 2px solid var(--red); outline-offset:1px; }
+  .submit-btn{
+    justify-self:start; background: var(--red); color: var(--cream);
+    border:none; padding: 14px 30px; font-weight:700; font-size:0.95rem; cursor:pointer;
+  }
+  .submit-btn:hover{ background:#7e3021; }
+  .form-note{ font-size:0.82rem; color: rgba(28,26,24,0.55); }
+  @media (max-width: 600px){ .form-row{ grid-template-columns:1fr; } }
+
+  /* ---------- Footer ---------- */
+  footer{ background: var(--ink); color: rgba(243,237,228,0.7); padding: 40px 0; }
+  footer .wrap{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; font-size:0.88rem;
+  }
+  footer .brand{ font-size: 1rem; }
+</style>
+</head>
+<body>
+
+<div class="stripes"></div>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="brand">IRON &amp; COMB</div>
+    <ul class="nav-links">
+      <li><a href="#menu">Prices</a></li>
+      <li><a href="#chairs">Barbers</a></li>
+      <li><a href="#book">Book</a></li>
+    </ul>
+    <a class="nav-cta" href="#book">Get a cut</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">EST. 2014 — WALK-INS &amp; APPOINTMENTS</div>
+    <h1>A proper cut. No small talk required.</h1>
+    <p>Straight razor fades, classic shaves, and beard work — done by three barbers who've been at this longer than most shops stay open.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="#book">Book your slot</a>
+      <a class="btn-secondary" href="#menu">See the price list</a>
+    </div>
+  </div>
+</section>
+
+<section class="menu-board" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">THE PRICE LIST</div>
+      <h2>Straightforward pricing, no add-on surprises</h2>
+    </div>
+    <div class="menu-list">
+      <div class="menu-row">
+        <div class="name">Classic cut<span class="sub">Clipper or scissor, your call</span></div>
+        <div class="dots"></div>
+        <div class="price">$28</div>
+      </div>
+      <div class="menu-row">
+        <div class="name">Skin fade<span class="sub">Blended down to bare skin</span></div>
+        <div class="dots"></div>
+        <div class="price">$34</div>
+      </div>
+      <div class="menu-row">
+        <div class="name">Straight razor shave<span class="sub">Hot towel, lather, blade</span></div>
+        <div class="dots"></div>
+        <div class="price">$38</div>
+      </div>
+      <div class="menu-row">
+        <div class="name">Beard trim &amp; line-up</div>
+        <div class="dots"></div>
+        <div class="price">$18</div>
+      </div>
+      <div class="menu-row">
+        <div class="name">Cut + shave combo</div>
+        <div class="dots"></div>
+        <div class="price">$55</div>
+      </div>
+      <div class="menu-row">
+        <div class="name">Kids cut<span class="sub">12 and under</span></div>
+        <div class="dots"></div>
+        <div class="price">$20</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="chairs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">THE CHAIRS</div>
+      <h2>Three barbers, three specialties</h2>
+    </div>
+  </div>
+  <div class="chairs">
+    <div class="chair">
+      <div class="initial">M</div>
+      <h3>Marcus</h3>
+      <p>Fades and skin work. Been behind the chair 15 years.</p>
+    </div>
+    <div class="chair">
+      <div class="initial">D</div>
+      <h3>Deshawn</h3>
+      <p>Straight razor shaves and beard sculpting.</p>
+    </div>
+    <div class="chair">
+      <div class="initial">R</div>
+      <h3>Rico</h3>
+      <p>Classic scissor cuts, textured styles.</p>
+    </div>
+  </div>
+</section>
+
+<div class="info">
+  <div class="wrap">
+    <div class="info-block"><b>Hours</b><span>Mon–Sat, 9am–7pm · Closed Sundays</span></div>
+    <div class="info-block"><b>Location</b><span>410 Main Street, Downtown</span></div>
+    <div class="info-block"><b>Phone</b><span>(555) 019-4471</span></div>
+  </div>
+</div>
+
+<section class="booking" id="book">
+  <div class="wrap">
+    <div class="section-head" style="text-align:left;">
+      <div class="kicker">BOOK A CHAIR</div>
+      <h2>Reserve your time</h2>
+      <p style="margin-top:12px; color:rgba(28,26,24,0.7); max-width:44ch;">Walk-ins welcome, but booking ahead means no waiting around. We'll confirm by text.</p>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('Thanks — replace this with your real booking handler.');">
+      <div class="form-row">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" type="text" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" required>
+        </div>
+      </div>
+      <div>
+        <label for="barber">Preferred barber</label>
+        <select id="barber">
+          <option>No preference</option>
+          <option>Marcus</option>
+          <option>Deshawn</option>
+          <option>Rico</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div>
+          <label for="date">Date</label>
+          <input id="date" type="date">
+        </div>
+        <div>
+          <label for="time">Time</label>
+          <input id="time" type="time">
+        </div>
+      </div>
+      <button class="submit-btn" type="submit">Request appointment</button>
+      <p class="form-note">This form doesn't send email on its own — see the notes below for how to connect it in WordPress.</p>
+    </form>
+  </div>
+</section>
+
+<div class="stripes"></div>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">IRON &amp; COMB</div>
+    <div>410 Main Street · (555) 019-4471 · hello@ironandcomb.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
