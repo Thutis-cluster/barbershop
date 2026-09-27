@@ -162,39 +162,117 @@
   }
   footer .brand{ font-size: 1rem; }
 
-  /* ================================
-   CRAFTED BY KASITU WEBS
-================================ */
+  /* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    padding: 35px 20px;
+    background: #050505;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.site-footer p {
+    color: #777;
+    font-size: 13px;
+}
 
 .crafted-by {
-    margin-top: 10px;
-    font-size: 13px;
-    color: #777;
-    letter-spacing: 0.4px;
+    margin-top: 8px;
 }
 
 .crafted-by span {
-    color: #c62828;
-    margin: 0 3px;
+    color: var(--accent);
 }
 
 .crafted-by a {
-    color: #f5f5f5;
+    color: #ddd;
     font-weight: 700;
-    letter-spacing: 0.8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .crafted-by a:hover {
-    color: #c62828;
-    text-shadow: 0 0 12px rgba(198, 40, 40, 0.45);
+    color: var(--accent-light);
 }
 
-/* Mobile */
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-grid,
+    .artists-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+
 @media (max-width: 600px) {
-    .crafted-by {
-        font-size: 12px;
+
+    .navbar {
+        min-height: 68px;
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    section {
+        padding: 70px 18px;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero-content {
+        padding: 60px 18px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 14vw, 65px);
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .btn-outline {
+        margin-left: 0;
+    }
+
+    .services-grid,
+    .artists-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .artist-card img {
+        height: 420px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
     }
 }
   
